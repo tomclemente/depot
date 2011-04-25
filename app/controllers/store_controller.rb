@@ -8,6 +8,7 @@ class StoreController < ApplicationController
         session[:counter] = 0
 	elsif session[:counter] > 5        
         @ses = session[:counter]
+	session[:counter] += 1
 	else
 	
 	session[:counter] +=1

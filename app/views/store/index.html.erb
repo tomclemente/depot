@@ -3,11 +3,12 @@
 <p id="notice"><%= notice %></p> 
 <% end %>
  
-<h1>Your Pragmatic Catalog</h1> 
+<h1>a<%= @ses%> Your Pragmatic Catalog</h1> 
  
 <% @products.each do |product| %>
   <div class="entry"> 
-    <%= image_tag(product.image_url) %>
+
+   <%=link_to image_tag(product.image_url), carts_path(@carts) %>
     <h3><%= product.title %></h3> 
     <%= sanitize(product.description) %>
     <div class="price_line"> 

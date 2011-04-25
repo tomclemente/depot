@@ -1,4 +1,4 @@
-<h2>Your Pragmatic Cart</h2>
+<h2><%= @ses%>Your Pragmatic Cart</h2>
 <ul>
 <% @cart.line_items.each do |item| %>
 <li><%= item.product.title %></li>

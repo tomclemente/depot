@@ -1,9 +1,10 @@
 class CartsController < ApplicationController
   # GET /carts
   # GET /carts.xml
+
   def index
     @carts = Cart.all
-
+      @ses = session[:counter]	
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @carts }
@@ -18,6 +19,8 @@ class CartsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @cart }
+	session[:counter] = 0
+	@ses=0
     end
   end
 
@@ -29,6 +32,7 @@ class CartsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @cart }
+	
     end
   end
 
@@ -65,6 +69,7 @@ class CartsController < ApplicationController
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @cart.errors, :status => :unprocessable_entity }
+
       end
     end
   end

@@ -7,6 +7,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @line_items }
+
     end
   end
 
@@ -69,6 +70,7 @@ class LineItemsController < ApplicationController
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+@ses=0
       end
     end
   end
